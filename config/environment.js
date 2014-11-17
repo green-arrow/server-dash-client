@@ -25,6 +25,12 @@ module.exports = function (environment) {
         }
     };
 
+    ENV['simple-auth'] = {
+        authenticator: 'authenticator:custom',
+        authorizer: 'authorizer:custom',
+        store: 'simple-auth-session-store:local-storage'
+    };
+
     if (environment === 'development') {
         // ENV.APP.LOG_RESOLVER = true;
         ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -34,6 +40,9 @@ module.exports = function (environment) {
 
         /* CSP */
         ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:3000";
+
+        /* Simple Auth */
+        ENV['simple-auth'].crossOriginWhitelist = [ 'http://localhost:3000' ];
     }
 
     if (environment === 'test') {

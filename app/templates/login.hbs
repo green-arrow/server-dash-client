@@ -3,10 +3,10 @@
         <div class="col-md-4 col-md-offset-4">
             {{error-alert hasError=hasError header=errorHeader message=errorMessage errorList=errorList}}
 
-            <form {{action 'login' on='submit'}}>
+            <form {{action 'authenticate' on='submit'}}>
                 <div class="form-group">
-                    <label for="email">Email address</label>
-                    {{input type="email" class="form-control" placeholder="E-mail" value=email}}
+                    <label for="identification">Email address</label>
+                    {{input type="email" class="form-control" placeholder="E-mail" id="identification" value=identification}}
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>

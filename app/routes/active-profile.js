@@ -1,6 +1,7 @@
-import AuthBaseRoute from './authorized-base';
+import Ember from 'ember';
+import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
-export default AuthBaseRoute.extend({
+export default Ember.Route.extend(AuthenticatedRouteMixin, {
     model: function(params) {
         var that = this,
             store = that.store;

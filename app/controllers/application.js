@@ -22,21 +22,6 @@ export default Ember.Controller.extend({
 
     }.observes('userId'),
     actions: {
-        logout: function() {
-            var that = this;
-
-            Ember.$.ajax({
-                type: 'GET',
-                url: ENV.APP.adapter.host + '/api/session/logout',
-                success: function() {
-                    that.set('userId', undefined);
-                    that.transitionToRoute('login');
-                },
-                error: function(result) {
-                    console.error('Something bad happened: ' + result);
-                }
-            });
-        },
         toggleSidebar: function() {
             var current = this.get('mobileSidebarVisible');
             this.set('mobileSidebarVisible', !current);

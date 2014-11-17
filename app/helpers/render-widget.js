@@ -1,10 +1,10 @@
 import Ember from 'ember';
 
-export function renderWidget(widgetNameBinding, options) {
+export default function(widgetNameBinding, options) {
     var widgetName = Ember.Handlebars.get(this, widgetNameBinding, options),
         helper = Ember.Handlebars.resolveHelper(options.data.view.container, 'widget-' + widgetName),
         template;
-
+    console.log('render widget helper');
     try {
         template = helper.call(this, options);
     } catch(ex) {
@@ -13,6 +13,4 @@ export function renderWidget(widgetNameBinding, options) {
     }
 
     return template;
-}
-
-export default Ember.Handlebars.registerHelper(renderWidget);
+};

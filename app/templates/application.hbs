@@ -5,7 +5,7 @@
                 {{#link-to 'profiles'}}<h1>server-dash</h1>{{/link-to}}
             </div>
             <div class="col-xs-6 text-right">
-                {{#if user}}
+                {{#if session.isAuthenticated}}
                     <span class="hidden-xs">Welcome, {{user.email}}</span>
                     {{#if viewingProfile}}
                         <span class="visible-xs-inline visible-sm-inline">
@@ -20,12 +20,12 @@
                         {{/link-to}}
                     {{/if}}
 
-                    <i class="fa fa-2x fa-power-off" title="Logout" {{action 'logout'}}></i>
+                    <i class="fa fa-2x fa-power-off" title="Logout" {{action 'invalidateSession'}}></i>
                 {{/if}}
             </div>
         </div>
         <div class="row visible-xs mobile-welcome xs-p-l10">
-            {{#if user}}
+            {{#if session.isAuthenticated}}
                 Welcome, {{user.email}}
             {{/if}}
         </div>

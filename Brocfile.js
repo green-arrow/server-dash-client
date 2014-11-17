@@ -5,6 +5,9 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
 
 var app = new EmberApp();
 
+/* jQuery Plugins */
+app.import('bower_components/jquery.cookie/jquery.cookie.js');
+
 /* Bootstrap */
 app.import({
     development: 'bower_components/bootstrap/dist/css/bootstrap.css',

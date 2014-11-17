@@ -1,6 +1,7 @@
-import AuthBaseRoute from './authorized-base';
+import Ember from 'ember';
+import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
-export default AuthBaseRoute.extend({
+export default Ember.Route.extend(AuthenticatedRouteMixin, {
     model: function() {
         var that = this,
             store = that.store;
@@ -8,7 +9,7 @@ export default AuthBaseRoute.extend({
         return store.find('profile').catch(function(error) {
             if(error.responseJSON && error.responseJSON.firstLogin) {
                 that.controllerFor('application').set('firstLogin', true);
-                that.transitionTo('accountSetup');
+                that.transitionTo('account-setup');
             } else {
                 throw error;
             }

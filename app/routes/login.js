@@ -2,14 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     beforeModel: function() {
-        var appController = this.controllerFor('application'),
-            userId = appController.get('userId'),
-            firstLogin = appController.get('firstLogin');
+        var session = this.get('session');
 
-        if(userId) {
+        if(session.isAuthenticated && !session.content.user.firstLogin) {
             this.transitionTo('profiles');
-        } else if(firstLogin) {
-            this.transitionTo('accountSetup');
+        } else if(session.isAuthenticated && session.content.user.firstLogin) {
+            this.transitionTo('account-setup');
         }
     }
 });
