@@ -1,29 +1,19 @@
-# Local Configuration
-config/local.js
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Dependencies
-node_modules
-bower_components
+# compiled output
+/dist
+/tmp
 
-# Sails.js / Waterline / Grunt
-.tmp
-dump.rdb
+# dependencies
+/node_modules
+/bower_components
 
-# Node.js / NPM
-lib-cov
-*.seed
-*.log
-*.out
-*.pid
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
 npm-debug.log
-
-# Miscellaneous
-*~
-*#
-.DS_STORE
-.netbeans
-nbproject
+testem.log
 .idea
-.node_history
-dist
-dist/*
+.idea/*

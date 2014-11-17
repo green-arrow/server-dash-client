@@ -1,87 +1,51 @@
-# server-dash
+# Server-dash-client
 
-A customizable dashboard to monitor your Linux server.
+This README outlines the details of collaborating on this Ember application.
 
-Base application / template taken from https://github.com/green-arrow/ember-sails
+A short introduction of this app could easily go here.
 
 ## Prerequisites
 
-To use this application, you need to have NodeJS and MongoDB installed.
+You will need the following things properly installed on your computer.
 
-### Homebrew
+* [Git](http://git-scm.com/)
+* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
 
-If you're running on a Mac, Homebrew is a great package manager that will really help you through this installation process.
+## Installation
 
-Visit http://brew.sh/ for instructions on downloading and installing.
+* `git clone <repository-url>` this repository
+* change into the new directory
+* `npm install`
+* `bower install`
 
-Before running any of these ``brew install`` commands, make sure to do a ``brew doctor`` and ``brew update``.
+## Running / Development
 
-NOTE: This step is completely optional and mostly meant for developers. You can download and install all of the below
-packages without Homebrew (and you'll need to if you're running this on your Linux server, which is exactly where
-this project is meant to run).
+* `ember server`
+* Visit your app at http://localhost:4200.
 
-### NodeJS
+### Code Generators
 
-To install NodeJS, visit http://nodejs.org/ and follow the install instructions.
-If you're running on a Mac with Homebrew installed, you can install NodeJS like this:
+Make use of the many generators for code, try `ember help generate` for more details
 
-```
-brew install node
-```
+### Running Tests
 
-### MongoDB
+* `ember test`
+* `ember test --server`
 
-Visit the MongoDB website (http://www.mongodb.org/) and follow the install instructions. If you're running this in a
-production environment on your Linux server, make sure to follow the instructions to have MongoDB start when your
-server boots (``chkconfig`` or something similar).
+### Building
 
-Again, if you're running on a Mac with Homebrew installed, you can install like this:
+* `ember build` (development)
+* `ember build --environment production` (production)
 
-```
-brew install mongodb
-```
+### Deploying
 
-## Getting Started
+Specify what it takes to deploy your app.
 
-Clone the application
+## Further Reading / Useful Links
 
-```
-git clone git@github.com:green-arrow/server-dash.git
-```
+* ember: http://emberjs.com/
+* ember-cli: http://www.ember-cli.com/
+* Development Browser Extensions
+  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
-Install dependencies
-
-```
-cd server-dash
-npm install && bower install
-```
-
-### Run the application
-
-By default this will be located at ``http://localhost:3000/``.
-
-This requires two parts, running ``gulp`` to build the application and ``node app.js`` to run the node server.
-I generally like to keep two tabs open in terminal, one for node and one for gulp.
-
-The default gulp task will watch your files for changes, build when changes occur, and execute live-reload
-(look for the Chrome live-reload extension for this :) ).
-
-### Defaults
-
-If this is your first time running the application, the default login credentials are:
-
-Email: admin@localhost
-
-Password: Adm!n
-
-These credentials will be displayed in the console window after starting the application for the first time.
-
-### Forcing Setup
-
-If you ever reach a point where you would like to completely reset the application and database, use the following command:
-
-```
-node app.js --force-setup
-```
-
-This will force the MongoDB database to be dropped and the setup script will run again.
