@@ -14,12 +14,6 @@ app.import({
     production: 'bower_components/bootstrap/dist/css/boostrap.min.css'
 });
 
-/* Font Awesome */
-app.import({
-    development: 'bower_components/font-awesome/css/font-awesome.css',
-    production: 'bower_components/font-awesome/css/font-awesome.min.css'
-});
-
 var faFonts = pickFiles('bower_components/font-awesome', {
     srcDir: '/fonts',
     files: ['*'],
