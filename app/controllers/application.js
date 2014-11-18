@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import ENV from 'server-dash-client/config/environment';
 
 export default Ember.Controller.extend({
     user: null,

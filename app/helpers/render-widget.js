@@ -13,4 +13,4 @@ export default function(widgetNameBinding, options) {
     }
 
     return template;
-};
+}

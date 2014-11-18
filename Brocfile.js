@@ -30,8 +30,6 @@ app.import({
 });
 
 app.import('bower_components/draggabilly/draggabilly.js');
-app.import('vendor/dashboard.packery.js');
-app.import('vendor/dashboard.js');
 
 // Use `app.import` to add additional libraries to the generated
 // output files.

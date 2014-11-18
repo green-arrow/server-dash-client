@@ -1,6 +1,8 @@
 import Ember from 'ember';
+import Dashboard from '../../vendor/dashboard';
 
 export default Ember.View.extend({
+    dashboard: null,
     didInsertElement: function(){
         var that = this;
 
@@ -29,8 +31,8 @@ export default Ember.View.extend({
             packeryEl = Ember.$('#main .packery');
 
         if(packeryEl.length) {
-            if(ServerDash.Dashboard) {
-                var oldDashboard = ServerDash.Dashboard.clone();
+            if(this.get('dashboard')) {
+                var oldDashboard = this.get('dashboard').clone();
                 that.removeDataAttributes(oldDashboard.getPackeryDashboard().element);
                 oldDashboard.hide(true);
             }
@@ -46,7 +48,7 @@ export default Ember.View.extend({
         withTransition = withTransition !== undefined ? withTransition : true;
 
         if(packeryEl.length) {
-            ServerDash.Dashboard = new Dashboard(packeryEl, {
+            var dashboard = new Dashboard(packeryEl, {
                 packeryIdAttr: 'data-profile-id',
                 widgetIdAttr: 'data-profile-widget-id',
                 methods: {
@@ -71,8 +73,10 @@ export default Ember.View.extend({
                 }
             });
 
-            ServerDash.Dashboard.initialize(withTransition);
-            ServerDash.Dashboard.show();
+            dashboard.initialize(withTransition);
+            dashboard.show();
+
+            this.set('dashboard', dashboard);
         }
     }
 });

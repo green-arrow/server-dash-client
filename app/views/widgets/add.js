@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import PackDash from '../../../vendor/dashboard.packery';
 
 export default Ember.View.extend({
     didInsertElement: function(){

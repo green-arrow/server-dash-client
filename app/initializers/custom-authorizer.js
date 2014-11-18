@@ -1,6 +1,4 @@
-import Ember from 'ember';
 import Base from 'simple-auth/authorizers/base';
-import ENV from '../config/environment';
 
 var CustomAuthorizer = Base.extend({
     authorize: function(jqXHR, requestOptions) {
