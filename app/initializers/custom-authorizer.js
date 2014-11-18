@@ -2,7 +2,6 @@ import Base from 'simple-auth/authorizers/base';
 
 var CustomAuthorizer = Base.extend({
     authorize: function(jqXHR, requestOptions) {
-        console.log('*****custom authorizer*****');
         requestOptions.xhrFields = { withCredentials: true };
         requestOptions.crossDomain = true;
     }
