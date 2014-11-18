@@ -3,8 +3,8 @@ import BaseController from 'server-dash-client/controllers/base-controller';
 
 export default BaseController.extend(Ember.Evented, {
     needs: 'activeProfile',
-    profileBinding: 'controllers.activeProfile.model',
-    widgetDataBinding: 'controllers.activeProfile.widgetData',
+    profileBinding: 'controllers.active-profile.model',
+    widgetDataBinding: 'controllers.active-profile.widgetData',
     profileObserver: function() {
         this.trigger('profileChanged');
     }.observes('profile.id'),

@@ -6,7 +6,7 @@ export default BaseController.extend({
     actions: {
         selectProfile: function(profile) {
             this.set('mobileSidebarVisible', false);
-            this.transitionToRoute('activeProfile', profile);
+            this.transitionToRoute('active-profile', profile);
         },
         showAddWidget: function() {
             this.set('mobileSidebarVisible', false);
