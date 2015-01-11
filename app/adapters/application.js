@@ -10,6 +10,10 @@ export default DS.RESTAdapter.extend({
         hash.xhrFields = { withCredentials: true };
         return this._super(url, method, hash);
     },
+    ajaxError: function(jqXHR, jsonPayload) {
+        console.log('********** ajaxError **********')
+        return jsonPayload;
+    },
     find: function(store, type, id, record) {
         var split = type.typeKey.split('widget'),
             isWidget = split.length === 2 && split[0] === '',
