@@ -11,7 +11,7 @@ export default DS.RESTAdapter.extend({
         return this._super(url, method, hash);
     },
     ajaxError: function(jqXHR, jsonPayload) {
-        console.log('********** ajaxError **********')
+        console.log('********** ajaxError **********');
         return jsonPayload;
     },
     find: function(store, type, id, record) {
