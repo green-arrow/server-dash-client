@@ -2,8 +2,8 @@
     <div class="packery" {{bind-attr data-profile-id="model.id"}}>
         <div class="grid-sizer"></div>
         <div class="gutter-sizer"></div>
-        {{outlet widgets}}
+        {{outlet "widgets"}}
     </div>
 </div>
 
-{{outlet addWidget}}
+{{outlet "addWidget"}}

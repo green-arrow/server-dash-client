@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Dashboard from '../../vendor/dashboard';
+import Dashboard from '../utils/dashboard';
 
 export default Ember.View.extend({
     dashboard: null,
