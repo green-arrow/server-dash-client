@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
             that.set('isShowing', false);
 
             setTimeout(function() {
-                that.transitionToRoute('activeProfile', that.get('controllers.activeProfile.model.id'));
+                that.transitionToRoute('active-profile', that.get('controllers.activeProfile.model.id'));
             }, 700);
         }
     }
