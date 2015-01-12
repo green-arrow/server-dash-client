@@ -14,6 +14,12 @@ app.import({
     production: 'bower_components/bootstrap/dist/css/boostrap.min.css'
 });
 
+var bootstrap = pickFiles('bower_components/bootstrap/dist/css', {
+   srcDir: '/',
+    files: ['bootstrap.css.map'],
+    destDir: '/assets'
+});
+
 var faFonts = pickFiles('bower_components/font-awesome', {
     srcDir: '/fonts',
     files: ['*'],
@@ -44,4 +50,4 @@ app.import('bower_components/draggabilly/draggabilly.js');
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-module.exports = app.toTree(faFonts);
+module.exports = app.toTree([faFonts, bootstrap]);
